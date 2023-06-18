@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, monospace;
+}
+
+
+.main {
+    width: 100%;
+    min-width: 280px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(35deg, #00e1fd, #fc007a);
+    color: #1931af;
+}
+
+.main-dark {
+  background: linear-gradient(215deg, #003941, #330018);
+  color: #ffffff;
+}
+
+.quizApp {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff47;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 650px;
+    gap: 2vw;
+}
+
+.quizApp-dark {
+  background-color: #00000080;
+}
+
+header {
+    display: flex;
+    gap: 2vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #191995;
+}
+
+.header-dark {
+  border-bottom: 2px solid #ffffff;
+}
+
+.question-div {
+  display: flex;
+  gap: 1vw;
+  line-height: 1.6;
+  font-size: 19px;
+  width: 100%;
+  max-width: 550px;
+  margin: 20px 0px;
+  padding: 0 20px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  text-align: left;
+  cursor: pointer;
+  color: #1931afcf;
+  background: #ffffff94;
+  font-size: 15px;
+  border-radius: 10px;
+  border-top: 2px Inset rgba(2,245,255, 0.5);
+  border-right: none;
+  border-bottom: 2px Inset rgba(255,94,247, 0.5);
+  border-left: none;
+  transition: color 0.2s;
+  font-weight: 700;
+  line-height: 1.5;
+  display: flex;
+  gap: 1vw;
+  position: relative;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+.btn-dark {
+  background: #000000cc;
+  color: #ffffffcf ;
+  border-top: 2px Inset rgb(2 245 255 / 30%);
+  border-bottom: 2px Inset rgb(255 56 245 / 27%);
+}
+
+.btn:hover:not([disabled]) {
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2% );
+  color: #fff;
+}
+
+.btn-dark:hover:not([disabled]) {
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgb(2 245 255 / 30%) 17.8%, rgb(255 56 245 / 27%) 100.2% );
+}
+
+.correct {
+  background: radial-gradient( circle farthest-corner at 10% 20%, rgb(94 255 115 / 69%) 17.8%, rgb(2 255 18 / 50%) 100.2%) !important;
+  color: #fff
+}
+
+.incorrect {
+  background: radial-gradient( circle farthest-corner at 10% 20%, rgb(255 43 43 / 78%) 17.8%, rgb(199 28 28 / 73%) 100.2%) !important;
+  color: #fff
+}
+
+.correct-dark {
+  background: radial-gradient( circle farthest-corner at 10% 20%, rgb(27 87 34 / 69%) 17.8%, rgb(3 69 7) 100.2%) !important;
+}
+
+.incorrect-dark {
+  background: radial-gradient( circle farthest-corner at 10% 20%, rgb(93 9 9 / 78%) 17.8%, rgb(73 10 10 / 53%) 100.2%) !important;
+}
+
+footer {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.next {
+  display: none;
+  width: 100%;
+  max-width: 200px;
+  font-size: 20px;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 50px;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px Inset rgba(184, 3, 213, 1);
+  border-left: none;
+  transition: 0.2s;
+  font-weight: 700;
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgb(23 61 209) 17.8%, rgb(184 3 213) 80.2% );
+  color: #ffffff;
+  text-align: center;
+}
+
+.next-dark {
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgb( 47 0 55) 17.8%, rgb(1 17 77) 80.2% );
+  color: #ffffff;
+  border-bottom: 2px Inset rgb(1 17 77);
+}
+
+.next:hover {
+  color: #1931afcf;
+  background: #ffffff94;
+}
+
+.next-dark:hover {
+  color: #ffffff;
+  background: #000000cc;
+}
+
+.switch {
+  margin-right: 20px;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  min-width: 60px;
+  height: 35px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  animation: toggle__animation 3s infinite;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  filter: blur(20px);
+  z-index: -1;
+  border-radius: 50px;
+  background-color: #ffffff;
+}
+
+.switch-dark::before {
+  background-color: #000000;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgb(23 61 209) 17.8%, rgb(184 3 213) 80.2% );
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider-dark {
+  background: radial-gradient( circle at 10% 20%,  rgb( 47 0 55) 15.8%, rgb(0 54 255) 113.2% );
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  left: 5px;
+  bottom: 5px;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
+     rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
+     background-color: #ffffff;
+}
+
+.input__check:checked + .slider {
+  background-color: #17202A;
+}
+
+.input__check:checked + .slider:before {
+  transform: translateX(1.5em);
+}
+
+@keyframes toggle__animation {
+  0%, 100% {
+    transform: translateY(-10px) rotateX(15deg) rotateY(-20deg);
+  }
+
+  50% {
+    transform: translateY(0px) rotateX(15deg) rotateY(-20deg);
+  }
+}
